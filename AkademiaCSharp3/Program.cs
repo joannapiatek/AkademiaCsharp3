@@ -44,6 +44,9 @@ namespace AkademiaCSharp3
             }
 
 
+            //Zad.3
+            //CreateAndModifyCitizensList();
+
             Console.ReadKey();
         }
 
@@ -57,7 +60,7 @@ namespace AkademiaCSharp3
                 numbers[i] = i;
             }
             numbers[2] = 8;
-            
+
 
 
             // List
@@ -90,7 +93,52 @@ namespace AkademiaCSharp3
                 Console.WriteLine("Lista zawiera Katowice");
             }
 
-            cities.Clear();            
+            cities.Clear();
+        }
+
+        //Zad.3 - jak zdążę/ew. domowe
+        public static void CreateAndModifyCitizensList()
+        {
+            var citizens = new List<Citizen>();
+            var formatter = new CitizenFormatter();
+
+            var endLoop = 'N';
+            do
+            {
+                Console.WriteLine();
+                if (citizens.Count == 0)
+                {
+                    Console.WriteLine("Lista obywateli jest pusta.");
+                }
+                else
+                {
+                    Console.WriteLine("Oto lista obywateli:");
+                    foreach (var citizen in citizens)
+                    {
+                        var formattedResult = formatter.Format(citizen);
+                        Console.WriteLine(formattedResult);
+                    }
+                }
+
+                Console.WriteLine("Czy dodać nowego obywatela do listy?");
+                Console.WriteLine("N - nie, T - tak");
+                var answer = Console.ReadKey().KeyChar;
+                Console.WriteLine();
+                if (answer == 'T' || answer == 't')
+                {
+                    Console.WriteLine("Podaj imię:");
+                    var name = Console.ReadLine();
+
+                    var citizen = new Citizen(name);
+                    citizens.Add(citizen);
+                    Console.WriteLine("Obywatel dodany!");
+                }
+
+
+                Console.WriteLine("Czy zakończyć program? (N/T)");
+                endLoop = Console.ReadKey().KeyChar;
+                Console.WriteLine();
+            } while (endLoop != 'T' || endLoop != 't');
         }
     }
 }
