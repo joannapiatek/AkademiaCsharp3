@@ -15,13 +15,7 @@ namespace AkademiaCSharp3
 
             var citizen = new Citizen("Ala");
             var teacher = new Teacher("Piotr", 2400);
-            var politician = new Politican("Jan", 45645);
-
-            // Metoda wirtrualna w klasie Citizen, 
-            // jej wywołanie z klasy Teacher i przeciążenie w klasie Politician
-            Console.WriteLine("Podatek obywatela: " + citizen.CalculateTax() + "\n");
-            Console.WriteLine("Podatek nauczyciela: " + teacher.CalculateTax() + "\n");
-            Console.WriteLine("Podatek polityka: " + politician.CalculateTax() + "\n");
+            var politician = new Politician("Jan", 45645);
 
             // 3. Formatowanie wyświetlania obiektów stworzonych klas - zadanie do napisania nr 1. 
             // (Stworzenie klasy CitizenFormatter, dodanie w niej metody i uruchomienie jej
@@ -30,7 +24,14 @@ namespace AkademiaCSharp3
             var result = formatter.Format(teacher);
             Console.WriteLine(result);
 
-            // 4. Połączenie stworzonych klas z listami
+            // 4. Metoda wirtrualna w klasie Citizen, 
+            // jej wywołanie z klasy Teacher i przeciążenie w klasie Politician
+            Console.WriteLine("Podatek obywatela: " + citizen.CalculateTax() + "\n");
+            Console.WriteLine("Podatek nauczyciela: " + teacher.CalculateTax() + "\n");
+            Console.WriteLine("Podatek polityka: " + politician.CalculateTax() + "\n");
+
+            
+            // 5. Połączenie stworzonych klas z listami
 
             var citizens = new List<Citizen>();
             citizens.Add(citizen);
@@ -82,7 +83,7 @@ namespace AkademiaCSharp3
             cities.Add("Kraków");
             cities.Add("Warszawa");
             cities.Add("Katowice");
-
+             
 
             // Przykłady metod dla listy
             cities.Sort();

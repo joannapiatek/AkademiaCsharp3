@@ -16,7 +16,7 @@ namespace AkademiaCSharp3
         public double Income { get; set; }
 
         // Zadanie do napisania nr 2. - dodac do konstruktora + metoda
-        public DateTime BornDate { get; set; }  
+        //public DateTime BornDate { get; set; }  
 
         public Citizen()
         {
